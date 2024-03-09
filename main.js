@@ -36,9 +36,9 @@ class ui {
       task.state ? "checked" : ""
     }/>
       </div>
-      <div class="task-title ${task.state ? "line" : ""}">${task.title}</div>
+      <div class='task-title ${task.state ? "line" : ""}'>${task.title}</div>
       <div class="remove">
-        <img src="./public/images/icon-cross.svg" alt="${task.id}" />
+        <img src="./images/icon-cross.svg" alt="${task.id}" />
       </div>
     </div>`;
 
@@ -184,10 +184,10 @@ switchmode.addEventListener("click", (e) => {
   // Toggle the data-theme attribute
   if (currentTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "light");
-    document.querySelector(".switch img").src = "./public/images/icon-moon.svg";
+    document.querySelector(".switch img").src = "./images/icon-moon.svg";
   } else {
     document.documentElement.setAttribute("data-theme", "dark");
-    document.querySelector(".switch img").src = "./public/images/icon-sun.svg";
+    document.querySelector(".switch img").src = "./images/icon-sun.svg";
   }
 });
 
@@ -245,8 +245,8 @@ document.querySelector(".tasks-list").addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", ui.unfinished_task_calculate());
 //event clear completed tasks
 document.querySelector(".clear").addEventListener("click", () => {
-  ui.clear;
-  ui.displaytasks;
+  ui.clear();
+  ui.displaytasks();
 });
 //event clear completed tasks
 
