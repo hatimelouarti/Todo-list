@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="all">
+        <div class="head">
+          <div class="logo">TODO</div>
+          <div class="switch">
+            <img src="./public/images/icon-moon.svg" alt="" />
+          </div>
+        </div>
+        <div class="input-task">
+          <span></span>
+          <input type="text" value="Create a new todo..." />
+        </div>
+        <div class="card">
+          <div class="tasks-list"></div>
+
+          <div class="filter">
+            <div class="itemsleft"><span></span> items left</div>
+            <div>
+              <ul class="filterselector">
+                <li>All</li>
+                <li>Active</li>
+                <li>Completed</li>
+              </ul>
+            </div>
+            <div class="clear">Clear Completed</div>
+          </div>
+          <!-- Add dynamic number -->
+        </div>
+        <div class="card filter-ul-mobile">
+          <ul class="filterselector">
+            <li>All</li>
+            <li>Active</li>
+            <li>Completed</li>
+          </ul>
+        </div>
+        <div class="drag-msg">Drag and drop to reorder list</div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/hatimelouarti">hatimelouarti</a>.
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,303 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+/*light theme variables*/
+$img-bg-light: url(/public/images/bg-desktop-light.jpg) no-repeat;
+$img-bg-light-mobile: url(./public/images/bg-mobile-light.jpg) no-repeat;
+$body-bg-light: hsl(0, 0%, 98%);
+/*dark theme variables*/
+$img-bg-dark: url(/public/images/bg-desktop-dark.jpg) no-repeat;
+$img-bg-dark-mobile: url(./public/images/bg-mobile-dark.jpg) no-repeat;
+$body-bg-dark: hsl(235, 21%, 11%);
+$card-bg-color: hsl(235, 24%, 19%);
+[data-theme="light"] {
+  body {
+    background-color: $body-bg-light;
+  }
+  @media only screen and (max-width: 600px) {
+    .header {
+      background: $img-bg-light-mobile;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  body {
+    background-color: $body-bg-dark;
+  }
+  .header {
+    background: $img-bg-dark;
+  }
+  .card {
+    background: $card-bg-color;
+  }
+  .input-task input {
+    background: $card-bg-color;
+  }
+  .tasks-list .task {
+    border-bottom: 1px solid hsl(237, 14%, 26%);
+  }
+  input[type="checkbox"]:hover:not(:checked)::before {
+    background: $card-bg-color !important;
+  }
+  .tasks-list .task .task-title {
+    color: hsl(236, 9%, 61%);
+  }
+  @media only screen and (max-width: 600px) {
+    .header {
+      background: $img-bg-dark-mobile;
+    }
+  }
+}
+
+body {
+  background-color: $body-bg-light;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.header {
+  background: $img-bg-light;
+  background-size: cover !important;
+  background-position: center !important;
+  display: grid;
+  justify-items: center;
+  height: 25.5vh;
+}
+.all {
+  margin-top: 70px;
+  width: 37.7%;
+  max-width: 549px;
+}
+.card {
+  background: white;
+  width: 100%;
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  margin-top: 3px;
+}
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.attribution {
+  text-align: center;
+  margin-top: 100px;
+}
+.head {
+  .logo {
+    font-size: 30pt;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .switch img {
+    float: right;
+    width: 26px;
+    margin-top: 14px;
+    cursor: pointer;
+  }
+}
+.input-task {
+  position: relative;
+  margin-top: 11px;
+}
+.input-task input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 70px;
+  height: 64px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: hsl(236, 9%, 61%);
+}
+.input-task span {
+  width: 25px;
+  height: 25px;
+  border: solid 1px hsl(236, 9%, 61%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 24px;
+  top: 19px;
+}
+.tasks-list {
+  padding: 0;
+  .task {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-bottom: 1px solid hsl(233, 11%, 84%);
+    min-height: 64px;
+    .check {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 37px;
+      margin-top: 20px;
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid hsl(233, 11%, 84%);
+        cursor: pointer;
+        position: absolute;
+      }
+
+      input[type="checkbox"]:hover:not(:checked) {
+        background: linear-gradient(
+          135deg,
+          hsl(192, 100%, 67%),
+          hsl(280, 87%, 65%)
+        );
+        border: 0;
+      }
+      input[type="checkbox"]:hover:not(:checked)::before {
+        content: "";
+        width: 23px;
+        height: 23px;
+        background: white;
+        display: block;
+        border-radius: 50%;
+        background-position: center;
+        margin-left: 1px;
+        margin-top: 1px;
+      }
+      input[type="checkbox"]:checked {
+        background: center url(./public/images/icon-check.svg) no-repeat,
+          linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        border: none;
+      }
+    }
+    .line {
+      text-decoration-line: line-through;
+    }
+    .task-title {
+      flex: 1;
+      align-self: flex-start;
+      height: 100%;
+      padding: 16px 10px 16px 40px;
+      font-size: 16px;
+      font-weight: 400;
+      color: hsl(235, 19%, 35%);
+      padding-top: 23px;
+      word-break: break-word;
+    }
+    .remove {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      margin-top: 18px;
+      margin-right: 20px;
+    }
+    .remove img {
+      float: right;
+      width: 20px;
+      cursor: pointer;
+    }
+  }
+}
+.filter {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  min-height: 50px;
+  font-weight: 700;
+  color: hsl(236, 9%, 61%);
+  padding: 16px 20px 16px 20px;
+  font-size: 13px;
+  overflow: clip;
+
+  ul li {
+    display: inline;
+    margin-right: 10px !important;
+    cursor: pointer;
+
+    font-size: 11pt;
+  }
+  ul li:hover {
+    color: hsl(235, 19%, 35%);
+  }
+  ul li:active {
+    color: hsl(220, 98%, 61%);
+  }
+  .clear:hover {
+    color: hsl(235, 19%, 35%);
+    cursor: pointer;
+  }
+}
+.drag-msg {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(236, 9%, 61%);
+}
+.filter-ul-mobile {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .all {
+    width: 90%;
+    min-width: 320px;
+  }
+  .header {
+    background: $img-bg-light-mobile;
+  }
+  .filter ul {
+    display: none;
+  }
+  .filter-ul-mobile {
+    margin-top: 20px;
+    padding: 15px 0 15px 0;
+    text-align: center;
+    color: hsl(236, 9%, 61%);
+    display: block;
+    ul li {
+      display: inline;
+      margin-right: 14px;
+      cursor: pointer;
+    }
+    ul li:hover {
+      color: hsl(235, 19%, 35%);
+    }
+    ul li:active {
+      color: hsl(220, 98%, 61%);
+    }
+    .clear:hover {
+      color: hsl(235, 19%, 35%);
+      cursor: pointer;
+    }
+  }
+}
+.task.draging :where(.check, .task-title, .remove) {
+  opacity: 0;
+  cursor: move;
+}
+@media only screen and (max-width: 960px) {
+  .all {
+    width: 90%;
+    min-width: 320px;
+  }
+}
